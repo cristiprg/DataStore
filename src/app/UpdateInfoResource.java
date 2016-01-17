@@ -34,7 +34,7 @@ public class UpdateInfoResource extends CoapResource {
 			
 			// log the message in the file
 			try {
-				Files.write(Paths.get(fileName), message.getBytes(), StandardOpenOption.APPEND);
+				Files.write(Paths.get(fileName), (message + System.lineSeparator()).getBytes(), StandardOpenOption.APPEND);
 			} catch (IOException e) {
 				// the file doesn't exist ... create one
 				PrintWriter writer;
